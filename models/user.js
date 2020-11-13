@@ -30,6 +30,10 @@ User.init(
         isEmail: true,
       },
     },
+    isOwner: {
+      type: DataTypes.BOOLEAN,
+      default: false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
