@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kill the Keg</title>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+</head>
+<body>
+    <header>
+        <nav>
+            {{#if loggedIn}}
+            <a href= "/dashboard">Dashboard</a>
+            <button id="logout" class="btn-no-style">Logout</button>
+            {{else}}
+            <a href="/login">Login</a>
+            {{/if}}
+        </nav>
+    </header>
+    <main>
+        {{{body}}}
+    </main>
+    <footer>
+        <p>
+            Kill the keg Copyright 2020. Kill the keg holds no liability due to the use or misuse of this site. All keg owners
+are responsible for anyone directed to their events as for proof of age and event outcomes.
+        </p>
+    </footer>
+</body>
+</html>
