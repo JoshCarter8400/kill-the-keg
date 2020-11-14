@@ -1,6 +1,7 @@
 const User = require("./user");
 const Post = require("./post");
 const Comment = require("./comment");
+const Mention = require("./mention");
 const Likes = require("./likes");
 
 // Associations
