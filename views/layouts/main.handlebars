@@ -13,6 +13,7 @@
 
 <body>
     <header>
+        {{#if showNavBar}}
         <nav>
             <ul class="nav justify-content-center">
                 {{#if loggedIn}}
@@ -29,6 +30,7 @@
                 {{/if}}
             </ul>
         </nav>
+        {{/if}}
     </header>
     <main>
         {{{body}}}
