@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kill the Keg</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kill the Keg</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
 
-<body>
-    <header>
-        {{#if showNavBar}}
-        <nav>
-            <ul class="nav justify-content-center">
-                {{#if loggedIn}}
-                <li class="nav-item">
-                    <a class="nav-link" href="/dashboard">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="logout" class="btn-no-style">Logout</a>
-                </li>
-                {{else}}
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                {{/if}}
-            </ul>
-        </nav>
-        {{/if}}
-    </header>
-    <main>
-        {{{body}}}
-    </main>
-    <footer>
-        <p>
-            Kill the keg Copyright 2020. Kill the keg holds no liability due to the use or misuse of this site. All keg
-            owners
-            are responsible for anyone directed to their events as for proof of age and event outcomes.
-        </p>
-    </footer>
-</body>
+    <body>
+        <header>
+            <nav>
+                <ul class="nav justify-content-center">
+                    {{#if loggedIn}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="logout" class="btn-no-style">Logout</a>
+                    </li>
+                    {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {{{body}}}
+        </main>
+        <footer>
+            <p>
+                Kill the keg Copyright 2020. Kill the keg holds no liability due to the use or misuse of this site. All keg
+                owners
+                are responsible for anyone directed to their events as for proof of age and event outcomes.
+            </p>
+        </footer>
+    </body>
 
 </html>
