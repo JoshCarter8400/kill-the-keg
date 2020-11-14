@@ -1,3 +1,7 @@
+body {
+    background-color: black;
+}
+
 .btn-no-style {
     background: none;
     border: none;

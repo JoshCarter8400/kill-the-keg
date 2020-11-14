@@ -104,4 +104,15 @@ router.get("/post/:id", (req, res) => {
     });
 });
 
+// This is Beccs Route so she can see WTAF she is doing.//
+router.get('/beccs', (req, res) => {
+
+  // change the handlebar file name to whichever file you want to see render - don't forget to stop and restart your server (Ctrl+C)//
+  // this showNavBar can be included for each res.render noting true or false depending on whether you want the nav bar to show or not//
+  res.render('homepage', {
+    loggedIn: true,
+    showNavBar: false
+  });
+});
+
 module.exports = router;
