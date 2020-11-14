@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const withAuth = require("../../utils/auth");
 const { User, Post, Comment, Likes } = require("../../models");
 
 // get all users
@@ -100,7 +101,7 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -120,7 +121,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.post("/logout", (req, res) => {
+router.post("/logout", withAuth, (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
