@@ -1,0 +1,15 @@
+<ul class="post-list">
+{{#each posts as |post|}}
+<li>
+    <article class="post">
+        <div class="title">
+            <span>{{post.id}}</span><span>{{post.title}}</span>
+            <span>{{post.post_content}}</span>
+        </div>
+        <div class="post-metadata">
+            {{post.likes_count}} Killer(s) Going <a href="/post/{{post.id}}">{{post.comments.length}} Comment(s)</a>
+        </div>
+    </article>
+</li>
+{{/each}}
+</ul>
