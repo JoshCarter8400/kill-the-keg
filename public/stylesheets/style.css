@@ -9,3 +9,26 @@ body {
     text-decoration: none;
     font-size: 100%;
 }
+
+.navbar-expand {
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-pack: start;
+    justify-content: center;
+}
+
+.login {
+    justify-content: center;
+
+}
+
+p,h4 {
+    color: rgb(216, 185, 8);
+}
+
+footer p {
+    color: white;
+}
+
+
+
