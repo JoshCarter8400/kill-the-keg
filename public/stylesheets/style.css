@@ -19,7 +19,6 @@ body {
 
 .login {
     justify-content: center;
-
 }
 
 p,h4 {
@@ -28,7 +27,16 @@ p,h4 {
 
 footer p {
     color: white;
+    padding: 30px 40px 30px 40px;
 }
 
+button {
+    background-color:  rgb(216, 185, 8);
+    font: black;
+    margin-top: 20px;
+}
 
+.container {
+    text-align: center;
+}
 

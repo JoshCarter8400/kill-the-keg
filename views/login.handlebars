@@ -1,39 +1,41 @@
-<form class="login">
-    <div>
-        <input type="text" placeholder="Username" id="UserLogin" />
-    </div>
-
-    <div>
-        <input type="text" placeholder="Password" id="PasswordLogin" />
-    </div>
+<div class="container">
+    <form class="login">
         <div>
-            <button type="submit"> LOGIN </button>
-    </div>
-</form>
+            <input type="text" placeholder="Username" id="UserLogin" />
+        </div>
 
-<br>
-<br>
+        <div>
+            <input type="text" placeholder="Password" id="PasswordLogin" />
+        </div>
+        <div class="button">
+            <button type="submit"> LOGIN </button>
+        </div>
+    </form>
+
+    <br>
+    <br>
 
     <h4>
         NOT A MEMBER YET? SIGN-UP!
     </h4>
-<form class="SignUp">
-    <div>
-        {{!-- <label for="Username-Signup"> Username </label> --}}
-        <input type="text" placeholder="Create Username" id="UserSignup" />
-    </div>
+    <form class="signup">
+        <div>
+            {{!-- <label for="Username-Signup"> Username </label> --}}
+            <input type="text" placeholder="Create Username" id="UserSignup" />
+        </div>
 
-    <div>
-        <input type="text" placeholder="Create Password" id="PasswordSignup" />
-    </div>
-    <div>
+        <div>
+            <input type="text" placeholder="Create Password" id="PasswordSignup" />
+        </div>
+        <div class="button">
             <button type="submit"> SIGN-UP </button>
-    </div>
+        </div>
+    </form>
+</div>
+<br>
 
-
-</form>
-    <p>
-        If you are an on-premise keg owner, please
-email us at setup@killthekeg.com to activate
-access to your portal
-    </p>
+<p>
+    If you are an on-premise keg owner, please
+    email us at setup@killthekeg.com to activate
+    access to your portal
+</p>
