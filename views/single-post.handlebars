@@ -4,7 +4,10 @@
         <span>{{post.post_content}}</span>
     </div>
     <div class="post-metadata">
-        {{post.likes_count}} Killer(s) Going <a href="/post/{{post.id}}">{{post.comments.length}} Comment(s)</a>
+        {{post.likes_count}} {{format_plural "Killer" post.likes_count}} Going
+    </div>
+    <div>
+        <button type="button" class="upvote-btn">I'm intereted in going</button>
     </div>
 </article>
 
@@ -21,4 +24,6 @@
         <button type="submit">Submit</button>
     </div>
 </form>
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/likes.js"></script>
 {{/if}}
