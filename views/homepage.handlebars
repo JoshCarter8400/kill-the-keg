@@ -7,7 +7,8 @@
             <span>{{post.post_content}}</span>
         </div>
         <div class="post-metadata">
-            {{post.likes_count}} Killer(s) Going <a href="/post/{{post.id}}">{{post.comments.length}} Comment(s)</a>
+            {{post.likes_count}} {{format_plural "Killer" post.likes_count}} Going 
+            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "Comment" post.comments.length}})</a>
         </div>
     </article>
 </li>
