@@ -24,7 +24,7 @@ User.init(
     },
     isOwner: {
       type: DataTypes.BOOLEAN,
-      default: false,
+      defaultValue: false
     },
     password: {
       type: DataTypes.STRING,
