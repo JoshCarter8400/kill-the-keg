@@ -29,7 +29,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then((dbMentionData) => {
       const mentions = dbMentionData.map((mention) => mention.get({ plain: true }));
-      res.render('notifications', { mentions, loggedIn: true });
+      res.render('notifications', { mentions, loggedIn: true, isOwner: req.session.isOwner });
     })
     .catch((err) => {
       console.log(err);

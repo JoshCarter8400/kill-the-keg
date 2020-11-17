@@ -15,9 +15,15 @@
             <nav>
                 <ul class="nav justify-content-center">
                     {{#if loggedIn}}
+                    {{#if isOwner}}
                     <li class="nav-item">
                         <a class="nav-link" href="/dashboard">Dashboard</a>
                     </li>
+                    {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notifications">Notifications</a>
+                    </li>
+                    {{/if}}
                     <li class="nav-item">
                         <a class="nav-link" id="logout" class="btn-no-style">Logout</a>
                     </li>
@@ -45,4 +51,3 @@
     </body>
 
 </html>
-

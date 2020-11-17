@@ -39,6 +39,7 @@ router.get("/", (req, res) => {
       res.render("homepage", {
         posts,
         loggedIn: req.session.loggedIn,
+        isOwner: req.session.isOwner
       });
     })
     .catch((err) => {
@@ -96,6 +97,7 @@ router.get("/post/:id", (req, res) => {
       res.render("single-post", {
         post,
         loggedIn: req.session.loggedIn,
+        isOwner: req.session.isOwner
       });
     })
     .catch((err) => {
