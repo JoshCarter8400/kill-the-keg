@@ -6,23 +6,17 @@ router.get("/", (req, res) => {
     console.log(req.session);
 
     Post.findAll({
-        attributes: ["id", "post_content", "title", "created_at"],
+        attributes: [
+            "id",
+            "post_content",
+            "title",
+            "created_at",
+            [sequelize.literal("(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)"), "likes_count"]
+        ],
         include: [
             {
                 model: Comment,
-                attributes: [
-                    "id",
-                    "comment_text",
-                    "post_id",
-                    "user_id",
-                    "created_at",
-                    [
-                        sequelize.literal(
-                            "(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)"
-                        ),
-                        "likes_count",
-                    ],
-                ],
+                attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
                 include: {
                     model: User,
                     attributes: ["username"],
