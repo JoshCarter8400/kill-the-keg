@@ -1,5 +1,5 @@
-<h2>Notifications</h2>
-<ul>
+<h4>@mentions</h4>
+<ul class="mentions">
   {{#each mentions}}
   <li>
     {{comment.user.username}} mentioned you in a comment on <a href="/post/{{comment_id}}">{{format_date comment.created_at}} - {{comment.post.title}}</a>

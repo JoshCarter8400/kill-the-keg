@@ -2,13 +2,13 @@
 {{#each posts as |post|}}
 <li>
     <article class="post">
-        <div class="title">
-            <span>{{post.id}}</span><span>{{post.title}}</span>
-            <span>{{post.post_content}}</span>
+        <div class="title event-title">
+            <h3>{{post.title}}</h3>
+            <p>{{post.post_content}}</p>
         </div>
         <div class="post-metadata">
-            {{post.likes_count}} {{format_plural "Killer" post.likes_count}} Going 
-            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "Comment" post.comments.length}})</a>
+            <span class="killers-going">{{post.likes_count}} {{format_plural "Killer" post.likes_count}} Going</span> |
+            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "Comment" post.comments.length}}</a>
         </div>
     </article>
 </li>

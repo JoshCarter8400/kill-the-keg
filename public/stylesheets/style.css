@@ -60,3 +60,26 @@ button {
     padding: auto;
 }
 
+.event-title {
+    color: rgb(58, 113, 216)
+}
+
+.post-metadata {
+    color: rgb(146, 140, 140);
+}
+
+.killers-going {
+    background-image: url(/img/cleaver-outline.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 30px;
+}
+
+.mentions {
+    color: rgb(144, 159, 177);
+    list-style-type: none;
+}
+
+.post-list {
+    list-style-type: none;
+}
