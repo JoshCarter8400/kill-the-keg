@@ -96,6 +96,19 @@ button {
     background-color: cornflowerblue;
 }
 
+#site-entry {
+    background-color: cornflowerblue;
+}
+
 .single-post {
     color: rgb(216, 185, 8);
+}
+
+.modal-text {
+    color: black;
+    font-weight: bold;
+}
+
+.modal-color {
+    background-color: rgb(216, 185, 8);
 }
