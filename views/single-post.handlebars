@@ -8,7 +8,7 @@
     </div>
     {{#if loggedIn}}
     <div>
-        <button type="button" class="upvote-btn">I'm intereted in going</button>
+        <button type="button" class="upvote-btn rounded-btn">I'm interested in going</button>
     </div>
     {{/if}}
 </article>
@@ -19,12 +19,14 @@
 
 {{#if loggedIn}}
 <link rel="stylesheet" href="/javascript/tributejs/tribute.css" />
+<br>
+<br>
 <form class="comment-form">
     <div>
         <textarea name="comment-body"></textarea>
     </div>
     <div>
-        <button type="submit">Submit</button>
+        <button class="rounded-btn" type="submit">SUBMIT</button>
     </div>
 </form>
 <script src="/javascript/tributejs/tribute.min.js"></script>
