@@ -1,0 +1,35 @@
+<article class="post">
+    <div class="title">
+        <span>{{post.id}}</span><span>{{post.title}}</span>
+        <span>{{post.post_content}}</span>
+    </div>
+    <div class="post-metadata">
+        {{post.likes_count}} {{format_plural "Killer" post.likes_count}} Going
+    </div>
+    {{#if loggedIn}}
+    <div>
+        <button type="button" class="upvote-btn rounded-btn">I'm interested in going</button>
+    </div>
+    {{/if}}
+</article>
+
+
+{{> comments post.comments}}
+
+
+{{#if loggedIn}}
+<link rel="stylesheet" href="/javascript/tributejs/tribute.css" />
+<br>
+<br>
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+    <div>
+        <button class="rounded-btn" type="submit">SUBMIT</button>
+    </div>
+</form>
+<script src="/javascript/tributejs/tribute.min.js"></script>
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/likes.js"></script>
+{{/if}}
