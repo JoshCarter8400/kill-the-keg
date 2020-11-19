@@ -112,3 +112,7 @@ button {
 .modal-color {
     background-color: rgb(216, 185, 8);
 }
+
+.fade {
+    background-color: black;
+}
