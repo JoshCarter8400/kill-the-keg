@@ -83,3 +83,36 @@ button {
 .post-list {
     list-style-type: none;
 }
+
+.post {
+    color: rgb(216, 185, 8);
+}
+
+.rounded-btn {
+    border-radius: 10px;
+}
+
+.upvote-btn {
+    background-color: cornflowerblue;
+}
+
+#site-entry {
+    background-color: cornflowerblue;
+}
+
+.single-post {
+    color: rgb(216, 185, 8);
+}
+
+.modal-text {
+    color: black;
+    font-weight: bold;
+}
+
+.modal-color {
+    background-color: rgb(216, 185, 8);
+}
+
+.fade {
+    background-color: black;
+}
