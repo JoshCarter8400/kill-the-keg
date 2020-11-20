@@ -117,3 +117,17 @@ button {
 .fade {
   background-color: black;
 }
+
+.new-post-form,
+.create {
+  color: rgb(216, 185, 8);
+}
+
+.create-post-title,
+.create-post-body {
+  width: 300px;
+}
+
+.btn {
+  background-color: rgb(216, 185, 8);
+}
