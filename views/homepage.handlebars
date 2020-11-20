@@ -1,25 +1,27 @@
 <ul class="post-list">
     {{#each posts as |post|}}
     <li>
-        <article class="post">
-            <div class="title event-title">
+        <article class="post mt-2">
+            <div class="title card event-title">
                 <h3>{{post.title}}</h3>
                 <p>{{post.post_content}}</p>
+
+                <div class="post-metadata">
+                    <span class="killers-going">{{post.likes_count}} {{format_plural "Killer" post.likes_count}}
+                        Going</span> |
+                    <a href="/post/{{post.id}}">{{post.comments.length}}
+                        {{format_plural "Comment" post.comments.length}}</a>
+                </div>
             </div>
-            <div class="post-metadata">
-                <span class="killers-going">{{post.likes_count}} {{format_plural "Killer" post.likes_count}}
-                    Going</span> |
-                <a href="/post/{{post.id}}">{{post.comments.length}}
-                    {{format_plural "Comment" post.comments.length}}</a>
-            </div>
+
         </article>
     </li>
     {{/each}}
 </ul>
 
 
-<div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header modal-color">
@@ -29,8 +31,10 @@
                 </button> --}}
             </div>
             <div class="modal-body modal-color">
-                <p class="modal-text">BY CLICKING ENTER, I CONFIRM THAT I AM AT LEAST 21 YEARS OF AGE OR OLDER, AND DO NOT
-                    HOLD <span class="entry-text">'KILL THE KEG'</span> OR IT'S AFFILIATES RESPONSIBLE FOR ANY RESULTS OF MY
+                <p class="modal-text">BY CLICKING ENTER, I CONFIRM THAT I AM AT LEAST 21 YEARS OF AGE OR OLDER, AND DO
+                    NOT
+                    HOLD <span class="entry-text">'KILL THE KEG'</span> OR IT'S AFFILIATES RESPONSIBLE FOR ANY RESULTS
+                    OF MY
                     ENTRY INTO IT'S
                     SITE</p>
             </div>

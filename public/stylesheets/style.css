@@ -1,118 +1,119 @@
 body {
-    background-color: black;
+  background-color: black;
 }
 
 .btn-no-style {
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 100%;
 }
 
 .navbar-expand {
-    -ms-flex-flow: row nowrap;
-    flex-flow: row nowrap;
-    -ms-flex-pack: start;
-    justify-content: center;
-    background-color: black;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -ms-flex-pack: start;
+  justify-content: center;
+  background-color: black;
 }
 
 .nav-link {
-    border-right: 10px;
-    border-left: 10px;
+  border-right: 10px;
+  border-left: 10px;
 }
 
 .login-form {
-    justify-content: center;
+  justify-content: center;
 }
 
-p,h4 {
-    color: rgb(216, 185, 8);
+p,
+h4 {
+  color: rgb(216, 185, 8);
 }
 
 footer p {
-    color: white;
-    padding: 30px 40px 30px 40px;
-    justify-content: center;
+  color: white;
+  padding: 30px 40px 30px 40px;
+  justify-content: center;
 }
 
 button {
-    background-color:  rgb(216, 185, 8);
-    font: black;
-    margin-top: 20px;
+  background-color: rgb(216, 185, 8);
+  font: black;
+  margin-top: 20px;
 }
 
 .container {
-    text-align: center;
+  text-align: center;
 }
 
 .text-light {
-    color: rgb(216, 185, 8)!important;
+  color: rgb(216, 185, 8) !important;
 }
 
 .logo-size {
-    display: block;
-    max-width: 100%;
-    max-height: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: auto;
 }
 
 .event-title {
-    color: rgb(58, 113, 216)
+  color: rgb(58, 113, 216);
 }
 
 .post-metadata {
-    color: rgb(146, 140, 140);
+  color: rgb(146, 140, 140);
 }
 
 .killers-going {
-    background-image: url(/img/cleaver-outline.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding-left: 30px;
+  background-image: url(/img/cleaver-outline.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 30px;
 }
 
 .mentions {
-    color: rgb(144, 159, 177);
-    list-style-type: none;
+  color: rgb(144, 159, 177);
+  list-style-type: none;
 }
 
 .post-list {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .post {
-    color: rgb(216, 185, 8);
+  color: rgb(216, 185, 8);
 }
 
 .rounded-btn {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .upvote-btn {
-    background-color: cornflowerblue;
+  background-color: cornflowerblue;
 }
 
 #site-entry {
-    background-color: cornflowerblue;
+  background-color: cornflowerblue;
 }
 
 .single-post {
-    color: rgb(216, 185, 8);
+  color: rgb(216, 185, 8);
 }
 
 .modal-text {
-    color: black;
-    font-weight: bold;
+  color: black;
+  font-weight: bold;
 }
 
 .modal-color {
-    background-color: rgb(216, 185, 8);
+  background-color: rgb(216, 185, 8);
 }
 
 .fade {
-    background-color: black;
+  background-color: black;
 }
