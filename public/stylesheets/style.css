@@ -123,11 +123,10 @@ button {
   color: rgb(216, 185, 8);
 }
 
-.create-post-title,
-.create-post-body {
-  width: 300px;
-}
-
 .btn {
   background-color: rgb(216, 185, 8);
+}
+
+.your-posts {
+  color: rgb(216, 185, 8);
 }
