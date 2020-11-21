@@ -1,20 +1,22 @@
-const router = require('express').Router();
+const router = require("express").Router();
 const withAuth = require("../../utils/auth");
-const { Comment, User, Mention } = require('../../models');
+const { Comment, User, Mention } = require("../../models");
 const { Op } = require("sequelize");
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   Comment.findAll()
-    .then(dbCommentData => res.json(dbCommentData))
-    .catch(err => {
+    .then((dbCommentData) => res.json(dbCommentData))
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.post('/', withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   if (req.session.isOwner) {
-    res.status(403).json({ message: 'You do not have permission to post comments' });
+    res
+      .status(403)
+      .json({ message: "You do not have permission to post comments" });
     return;
   }
 
@@ -24,7 +26,7 @@ router.post('/', withAuth, async (req, res) => {
     dbCommentData = await Comment.create({
       comment_text: req.body.comment_text,
       post_id: req.body.post_id,
-      user_id: req.session.user_id
+      user_id: req.session.user_id,
     });
   } catch (err) {
     console.log(err);
@@ -37,9 +39,9 @@ router.post('/', withAuth, async (req, res) => {
   try {
     var mentionedUsers = await User.findAll({
       where: {
-        username: { [Op.or]: mentions }
+        username: { [Op.or]: mentions },
       },
-      attributes: ['id']
+      attributes: ["id"],
     });
   } catch (err) {
     console.log(err);
@@ -48,16 +50,16 @@ router.post('/', withAuth, async (req, res) => {
 
   if (!mentionedUsers || mentionedUsers.length === 0) {
     // if finding mentioned users failed or is an empty array, log the error but fail gracefully by returning the comment data and ignoring mentions
-    console.log(err);
+    // console.log(err);
     res.json(dbCommentData);
     return;
   }
 
   let comment_id = dbCommentData.get({ plain: true }).id;
-  mentionedUsers = mentionedUsers.map(user => {
+  mentionedUsers = mentionedUsers.map((user) => {
     return {
       user_id: user.get({ plain: true }).id,
-      comment_id
+      comment_id,
     };
   });
 
@@ -73,39 +75,41 @@ router.post('/', withAuth, async (req, res) => {
   res.json({ comment: dbCommentData, mentions: dbMentionData });
 });
 
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   Comment.findOne({
-    where: { id: req.params.id }
+    where: { id: req.params.id },
   })
-    .then(dbCommentData => {
+    .then((dbCommentData) => {
       if (!dbCommentData) {
-        res.status(404).json({ message: 'No comment found with this id' });
+        res.status(404).json({ message: "No comment found with this id" });
         return;
       }
       res.json(dbCommentData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   if (req.session.isOwner) {
-    res.status(403).json({ message: 'You do not have permission to delete comments' });
+    res
+      .status(403)
+      .json({ message: "You do not have permission to delete comments" });
     return;
   }
   Comment.destroy({
-    where: { id: req.params.id }
+    where: { id: req.params.id },
   })
-    .then(dbCommentData => {
+    .then((dbCommentData) => {
       if (!dbCommentData) {
-        res.status(404).json({ message: 'No comment found with this id' });
+        res.status(404).json({ message: "No comment found with this id" });
         return;
       }
       res.json(dbCommentData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
