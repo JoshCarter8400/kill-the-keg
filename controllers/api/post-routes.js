@@ -81,6 +81,8 @@ router.put("/:id", (req, res) => {
   Post.update(req.body, {
     where: {
       id: req.params.id,
+      title: req.params.title,
+      post_content: req.params.post_content,
     },
   })
     .then((dbPostData) => {

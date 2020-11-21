@@ -1,10 +1,34 @@
-<article class="post">
-    <div class="title">
-        <span>{{post.id}}</span><span>{{post.title}}</span>
-        <span>{{post.post_content}}</span>
+{{!-- <article class="post">
+    <div class="title card event-title">
+        <div class="card-body">
+            <span>{{post.id}}</span><span>{{post.title}}</span>
+            <span>{{post.post_content}}</span>
+
+            <div class="post-metadata">
+                {{post.likes_count}} {{format_plural "Killer" post.likes_count}} Going
+            </div>
+            {{> comments post.comments}}
+        </div>
     </div>
-    <div class="post-metadata">
-        {{post.likes_count}} {{format_plural "Killer" post.likes_count}} Going
+    {{#if loggedIn}}
+    <div>
+        <button type="button" class="upvote-btn rounded-btn">I'm interested in going</button>
+    </div>
+    {{/if}}
+</article> --}}
+
+<article class="post">
+    <div class="title card event-title">
+        <h3>{{post.title}}</h3>
+        <p>{{post.post_content}}</p>
+
+        <div class="post-metadata">
+            <span class="killers-going">{{post.likes_count}} {{format_plural "Killer" post.likes_count}}
+                Going</span> |
+            <a href="/post/{{post.id}}">{{post.comments.length}}
+                {{format_plural "Comment" post.comments.length}}</a>
+        </div>
+        {{> comments post.comments}}
     </div>
     {{#if loggedIn}}
     <div>
@@ -13,8 +37,6 @@
     {{/if}}
 </article>
 
-
-{{> comments post.comments}}
 
 
 {{#if loggedIn}}
