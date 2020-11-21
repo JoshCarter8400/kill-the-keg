@@ -81,8 +81,6 @@ router.put("/:id", (req, res) => {
   Post.update(req.body, {
     where: {
       id: req.params.id,
-      title: req.params.title,
-      post_content: req.params.post_content,
     },
   })
     .then((dbPostData) => {
@@ -94,7 +92,7 @@ router.put("/:id", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(500), json(err);
+      res.status(500).json(err);
     });
 });
 

@@ -129,7 +129,8 @@ button {
   background-color: rgb(216, 185, 8);
 }
 
-.your-posts {
+.your-posts,
+.dashboard-date-style {
   color: rgb(216, 185, 8);
 }
 
