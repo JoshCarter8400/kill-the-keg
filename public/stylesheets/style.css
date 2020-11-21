@@ -91,10 +91,6 @@ button {
   color: rgb(216, 185, 8);
 }
 
-.post-comment {
-    color: rgb(216, 185, 8);
-}
-
 .rounded-btn {
   border-radius: 10px;
 }
@@ -137,7 +133,7 @@ button {
   color: rgb(216, 185, 8);
 }
 
-.post-comments {
+.post-comment {
     color: black;
 }
 
