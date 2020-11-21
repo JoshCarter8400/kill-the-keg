@@ -3,13 +3,13 @@
 
     <form class="new-post-form">
         <div>
-            <label class="create-post-title" for="post-title">Post Info</label>
-            <input class="create-post-title post-body" type="text" id="post-title" placeholder="Post Info Here"
+            {{!-- <label class="create-post-title" for="post-title"></label> --}}
+            <input class="create-post-title mt-2 post-body" type="text" id="post-title" placeholder="Your Establishment"
                 name="post-title" />
         </div>
         <div>
-            <label class="create-post-body" for="post-body">Create Your Post</label>
-            <input class="create-post-body" id="post-body" name="post-body"></input>
+            {{!-- <label class="create-post-body" for="post-body"></label> --}}
+            <input class="create-post-body mt-2" id="post-body" placeholder="Event Info" name="post-body"></input>
         </div>
         <button type="submit" class="btn">Create</button>
     </form>
