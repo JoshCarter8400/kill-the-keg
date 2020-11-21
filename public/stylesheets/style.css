@@ -91,6 +91,10 @@ button {
   color: rgb(216, 185, 8);
 }
 
+.post-comment {
+    color: rgb(216, 185, 8);
+}
+
 .rounded-btn {
   border-radius: 10px;
 }
@@ -117,7 +121,7 @@ button {
 }
 
 .fade {
-  background-color: black;
+    background-color: black;
 }
 
 .new-post-form,
@@ -135,4 +139,10 @@ button {
 
 .post-comments {
     color: black;
+}
+
+@media screen and (max-width: 850px) {
+    #kill-logo {
+        width: 275px;
+    }
 }
