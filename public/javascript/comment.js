@@ -28,7 +28,7 @@ document
 
 var tribute = new Tribute({
   values: async (text, cb) => {
-    const response = await fetch("http://localhost:3001/api/users");
+    const response = await fetch("/api/users");
     const data = await response.json();
     cb(data);
   },
