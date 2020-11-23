@@ -18,9 +18,6 @@ Gil Abadio
  - GitHub Repo
 https://github.com/JoshCarter8400/kill-the-keg
 
- - Homepage Screenshot:
- 
-
  - Technologies & Tools Used
 Heroku
 Bootstrap
