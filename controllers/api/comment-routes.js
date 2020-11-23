@@ -2,6 +2,7 @@ const router = require("express").Router();
 const withAuth = require("../../utils/auth");
 const { Comment, User, Mention } = require("../../models");
 const { Op } = require("sequelize");
+const sanitizeHtml = require('sanitize-html');
 
 router.get("/", (req, res) => {
   Comment.findAll()
@@ -20,11 +21,17 @@ router.post("/", withAuth, async (req, res) => {
     return;
   }
 
+  // allow spans with data attributes from TributeJS in case using contenteditable or WYSIWYG editors in a possible future version
+  const cleanHtml = sanitizeHtml(req.body.comment_text, {
+    allowedTags: ['span'],
+    allowedAttributes: { span: ['data-*'] }
+  });
+  console.log(cleanHtml);
   let dbCommentData;
 
   try {
     dbCommentData = await Comment.create({
-      comment_text: req.body.comment_text,
+      comment_text: cleanHtml,
       post_id: req.body.post_id,
       user_id: req.session.user_id,
     });

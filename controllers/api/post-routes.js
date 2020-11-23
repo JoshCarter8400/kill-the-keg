@@ -2,6 +2,10 @@ const router = require("express").Router();
 const { Post, User, Comment } = require("../../models");
 const { restore } = require("../../models/user");
 
+// protect from html tag injection via API routes
+const sanitizeHtml = require('sanitize-html');
+const sanitizeOpts = { allowedTags: [] };
+
 router.get("/", (req, res) => {
   Post.findAll({
     order: [["created_at", "DESC"]],
@@ -66,8 +70,8 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   Post.create({
-    title: req.body.title,
-    post_content: req.body.post_content,
+    title: sanitizeHtml(req.body.title, sanitizeOpts),
+    post_content: sanitizeHtml(req.body.post_content, sanitizeOpts),
     user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
@@ -78,7 +82,12 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  Post.update(req.body, {
+  Post.update(
+    {
+      title: sanitizeHtml(req.body.title, sanitizeOpts),
+      post_content: sanitizeHtml(req.body.post_content, sanitizeOpts),
+      user_id: req.session.user_id,
+    }, {
     where: {
       id: req.params.id,
     },
