@@ -71,6 +71,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   Post.create({
     title: sanitizeHtml(req.body.title, sanitizeOpts),
+    event_date: sanitizeHtml(req.body.event_date, sanitizeOpts),
     post_content: sanitizeHtml(req.body.post_content, sanitizeOpts),
     user_id: req.session.user_id,
   })
@@ -85,8 +86,8 @@ router.put("/:id", (req, res) => {
   Post.update(
     {
       title: sanitizeHtml(req.body.title, sanitizeOpts),
-      post_content: sanitizeHtml(req.body.post_content, sanitizeOpts),
       event_date: sanitizeHtml(req.body.event_date, sanitizeOpts),
+      post_content: sanitizeHtml(req.body.post_content, sanitizeOpts),
       user_id: req.session.user_id,
     },
     {
