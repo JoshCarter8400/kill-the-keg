@@ -6,7 +6,7 @@
             {{!-- <label class="create-post-title" for="post-title"></label> --}}
             <input class="create-post-title mt-2 post-body" type="text" id="post-title" placeholder="Your Establishment"
                 name="post-title" />
-        </div>  
+        </div>
         <div>
             <input class="create-post-body mt-2" id="event-date" placeholder="Date of Event" name="event-date"></input>
         </div>
@@ -14,7 +14,7 @@
             {{!-- <label class="create-post-body" for="post-body"></label> --}}
             <input class="create-post-body mt-2" id="post-body" placeholder="Event Info" name="post-body"></input>
         </div>
-      
+
         <button type="submit" class="btn">Create</button>
     </form>
 </section>
@@ -24,7 +24,7 @@
     <h2 class="your-posts">Your Posts</h2>
     <ol>
         {{#each posts as |post|}}
-        <li> 
+        <li>
             {{!-- {{> post-info post}} --}}
             <article class="post">
                 <div class="title card event-title">
