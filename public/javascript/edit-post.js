@@ -20,6 +20,9 @@ async function editFormHandler(event) {
   }
 }
 
-document
-  .querySelector(".edit-post-form")
-  .addEventListener("submit", editFormHandler);
+document.querySelector(".edit-post-form").addEventListener("submit", editFormHandler);
+
+$("#event-date").datepicker({
+  minDate: "0",
+  maxDate: "+3"
+});

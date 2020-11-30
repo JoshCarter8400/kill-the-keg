@@ -97,7 +97,6 @@ router.get("/post/:id", (req, res) => {
 
       const post = dbPostData.get({ plain: true });
       const isGoing = post.likes.some(like => like.user_id == req.session.user_id);
-      console.log(isGoing);
       res.render("single-post", {
         post,
         loggedIn: req.session.loggedIn,

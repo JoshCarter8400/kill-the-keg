@@ -1,17 +1,15 @@
+<link rel="stylesheet" href="/javascript/jquery-ui-1.12.1.custom/jquery-ui.min.css" />
 <section>
     <h2 class="create">Create New Post</h2>
 
     <form class="new-post-form">
         <div>
-            {{!-- <label class="create-post-title" for="post-title"></label> --}}
-            <input class="create-post-title mt-2 post-body" type="text" id="post-title" placeholder="Your Establishment"
-                name="post-title" />
+            <input class="create-post-title mt-2 post-body" type="text" id="post-title" placeholder="Your Establishment" name="post-title" />
         </div>
         <div>
             <input class="create-post-body mt-2" id="event-date" placeholder="Date of Event" name="event-date"></input>
         </div>
         <div>
-            {{!-- <label class="create-post-body" for="post-body"></label> --}}
             <input class="create-post-body mt-2" id="post-body" placeholder="Event Info" name="post-body"></input>
         </div>
 
@@ -25,7 +23,6 @@
     <ol>
         {{#each posts as |post|}}
         <li>
-            {{!-- {{> post-info post}} --}}
             <article class="post">
                 <div class="title card event-title">
                     <h3>{{post.title}}: {{{post.event_date}}}</h3>
@@ -39,4 +36,6 @@
 </section>
 {{/if}}
 
+<script src="/javascript/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+<script src="/javascript/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="/javascript/add-post.js"></script>
