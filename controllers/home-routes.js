@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Post, User, Comment } = require("../models");
+const { Post, User, Comment, Likes } = require("../models");
 
 router.get("/", (req, res) => {
   console.log(req.session);
@@ -84,6 +84,9 @@ router.get("/post/:id", (req, res) => {
         model: User,
         attributes: ["username"],
       },
+      {
+        model: Likes
+      }
     ],
   })
     .then((dbPostData) => {
@@ -93,26 +96,19 @@ router.get("/post/:id", (req, res) => {
       }
 
       const post = dbPostData.get({ plain: true });
+      const isGoing = post.likes.some(like => like.user_id == req.session.user_id);
+      console.log(isGoing);
       res.render("single-post", {
         post,
         loggedIn: req.session.loggedIn,
         isOwner: req.session.isOwner,
+        isGoing
       });
     })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
-
-// This is Beccs Route so she can see WTAF she is doing.//
-router.get("/beccs", (req, res) => {
-  // change the handlebar file name to whichever file you want to see render - don't forget to stop and restart your server (Ctrl+C)//
-  // this showNavBar can be included for each res.render noting true or false depending on whether you want the nav bar to show or not//
-  res.render("homepage", {
-    loggedIn: true,
-    showNavBar: false,
-  });
 });
 
 module.exports = router;

@@ -138,6 +138,25 @@ button {
     color: black;
 }
 
+.custom-control-label::before,
+.custom-control-input:checked ~ .custom-control-label::before{
+  display: none;
+}
+.custom-control-label::after{
+  top: -15px;
+  left: unset;
+  right: -50px;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background: transparent no-repeat;
+  background-size: contain;
+  background-image: url(/img/cleaver-outline.png);
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after{
+  background-image: url(/img/cleaver-full.png);
+}
+
 @media screen and (max-width: 850px) {
     #kill-logo {
         width: 275px;

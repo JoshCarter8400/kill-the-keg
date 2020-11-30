@@ -1,25 +1,6 @@
-{{!-- <article class="post">
-    <div class="title card event-title">
-        <div class="card-body">
-            <span>{{post.id}}</span><span>{{post.title}}</span>
-            <span>{{post.post_content}}</span>
-
-            <div class="post-metadata">
-                {{post.likes_count}} {{format_plural "Killer" post.likes_count}} Going
-            </div>
-            {{> comments post.comments}}
-        </div>
-    </div>
-    {{#if loggedIn}}
-    <div>
-        <button type="button" class="upvote-btn rounded-btn">I'm interested in going</button>
-    </div>
-    {{/if}}
-</article> --}}
-
 <article class="post">
     <div class="title card event-title">
-        <h3>{{post.title}}: {{{event_date}}}</h3> 
+        <h3>{{post.title}}: {{{event_date}}}</h3>
         <p>{{post.post_content}}</p>
 
         <div class="post-metadata">
@@ -31,8 +12,9 @@
         {{> comments post.comments}}
     </div>
     {{#if loggedIn}}
-    <div>
-        <button type="button" class="upvote-btn rounded-btn">I'm interested in going</button>
+    <div class="custom-control custom-checkbox mt-4">
+        <input type="checkbox" class="custom-control-input" id="rsvp-checkbox" {{#if isGoing}}checked="checked" {{/if}} />
+        <label class="custom-control-label" for="rsvp-checkbox">Interested in going? </label>
     </div>
     {{/if}}
 </article>
