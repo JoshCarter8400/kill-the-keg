@@ -1,17 +1,24 @@
+<link rel="stylesheet" href="/javascript/jquery-ui-1.12.1.custom/jquery-ui.min.css" />
 <form class="edit-post-form">
     <div>
-        <input name="post-title" type="text" value="{{post.title}}" />
-
-        {{!-- <span>({{format_url post.post_url}})</span> --}}
+        <h2 class="your-posts">Edit your Post</h2>
+        <div>
+            <input class="create-post-title mt-2 post-body" type="text" id="post-title" value="{{post.title}}" name="post-title" />
+        </div>
+        <div>
+            <input class="create-post-body mt-2" id="event-date" value="{{post.event_date}}" name="event-date"></input>
+        </div>
+        <div>
+            <input class="create-post-body mt-2" id="post-body" value="{{post.post_content}}" name="post-body"></input>
+        </div>
     </div>
     <div class="dashboard-date-style">
-        {{format_date post.created_at}}
-
-        {{!-- <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a> --}}
     </div>
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
 </form>
 
+<script src="/javascript/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+<script src="/javascript/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/edit-post.js"></script>
